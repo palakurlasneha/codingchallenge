@@ -11,10 +11,12 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO users (username, password) VALUES ('
-".$_POST["username"]."
+$sql = "INSERT INTO users (name, email,phone) VALUES ('
+".$_POST["name"]."
 ', '
-".$_POST["password"]."
+".$_POST["email"]."
+', '
+".$_POST["phone"]."
 ')";
 
 if (mysqli_query($conn, $sql)) {
